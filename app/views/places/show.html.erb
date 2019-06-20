@@ -5,9 +5,7 @@
 	<p><%= @place.description %></p>
 
 	
-    #map {
-      height: 300px;
-    }
+    
     
   
   <% if @place.latitude.present? && @place.longitude.present? %>
@@ -30,7 +28,7 @@
       }
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpRZXD-2S3ilYPo6EvCfH6ECVwux7V9So&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GEOCODER_API_KEY"] %>&callback=initMap">
     </script>
 
     <div id="map"></div>
