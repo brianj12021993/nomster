@@ -5,11 +5,15 @@ class CommentsController < ApplicationController
 		@place = Place.find(params[:place_id])
 		@place.comments.create(comment_params.merge(user: current_user))
 		redirect_to place_path(@place)
+		@place = Photo.find(params[:photo_id])
+		@place.photos.create(photo_params.merge(user: current_user))
+		redirect_to place_photos(@place)
 	end
 
 	private
 
   def comment_params
     params.require(:comment).permit(:message, :rating)
+    params.require(:photo).permit(:caption, :photo)
   end
 end
