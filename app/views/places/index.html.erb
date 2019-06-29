@@ -30,6 +30,8 @@
 
 
 <% @places.each do |place| %>
+  <%= image_tag photo.picture.url %>
+  <%= photo.caption %>
 	<div class="booyah-box col-10 offset-1">
 		<h1><%= link_to place.name, place_path(place) %></h1><br />
 		<i><%= place.address %></i><br /><br />

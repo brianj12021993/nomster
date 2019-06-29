@@ -1,0 +1,17 @@
+class Deck
+
+	attr_accessor :random, :range
+
+
+	def initialize(random, range)
+		a = {1, 2, 3, 4, 5}
+	end
+
+	def output_shuffle
+		a.shuffle(random: Random.new(1))
+	end
+
+	def self.random_card
+		Card.new(rand(4), :spades)
+	end
+end
